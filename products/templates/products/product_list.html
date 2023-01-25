@@ -11,9 +11,9 @@
 
     {% for product in products %}
         <div>
-            {{ product.title }}
-            {{ product.description|truncatewords:10 }}
-            {{ product.price }}
+            <a href={{ product.get_absolute_url }}>
+                {{ product.title }}
+            </a>
         </div>
     {% endfor %}
 {% endblock content %}
