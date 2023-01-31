@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="en">
@@ -81,7 +82,7 @@
                         <li class="header-toolbar__item mini-cart-item">
                             <a href="#miniCart" class="header-toolbar__btn toolbar-btn mini-cart-btn">
                                 <i class="flaticon flaticon-shopping-cart"></i>
-                                <sup class="mini-cart-count">2</sup>
+                                <sup class="mini-cart-count">{{ cart|length }}</sup>
                             </a>
                         </li>
                         <li class="header-toolbar__item user-info">
@@ -89,18 +90,33 @@
                                 <i class="flaticon flaticon-user"></i>
                             </a>
                             <ul class="user-info-menu">
-                                <li>
-                                    <a class="text-right" href="my-account.html">حساب کاربری</a>
-                                </li>
-                                <li>
-                                    <a class="text-right" href="cart.html">سبد خرید</a>
-                                </li>
-                                <li>
-                                    <a class="text-right" href="wishlist.html">علاقه مندی ها</a>
-                                </li>
-                                <li>
-                                    <a class="text-right" href="order-tracking.html">تاریخچه سفارشات</a>
-                                </li>
+                                {% if user.is_authenticated %}
+                                    <li>
+                                        <a class="text-right" href="profile.html">{% trans 'profile' %}</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-right" href="cart.html">{% trans 'cart' %}</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-right" href="wishlist.html">علاقه مندی ها</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-right" href="order-tracking.html">تاریخچه سفارشات</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-right" href={% url 'account_logout' %}>{% trans 'logout' %}</a>
+                                    </li>
+
+                                {% else %}
+                                    <li>
+                                        <a class="text-right" href={% url 'account_login' %}>{% trans 'login' %}</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-right" href="{% url 'account_signup' %}">{% trans 'signup' %}</a>
+                                    </li>
+
+
+                                {% endif %}
                             </ul>
                         </li>
                         <li class="header-toolbar__item">
@@ -121,15 +137,55 @@
 </header>
 <!-- Header End -->
 
+{% if messages %}
+    <div class="container">
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+    </div>
+{% endif %}
+
+
 {% block content %}
 {% endblock content %}
 
-    <!-- ************************* JS Files ************************* -->
 
-    <!-- jQuery JS -->
-    <script src={% static 'js/vendor.js'  %}></script>
+<!-- Footer Start-->
+<footer class="footer">
+    <div class="footer-top bg-color ptb--50" data-bg-color="#f6f6f6">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-9 text-center">
+                    <div class="footer-widget mb--50">
+                        <div class="textwidget">
+                            <img src="assets/img/codingyar_logo.png" alt="Logo">
+                        </div>
+                    </div>
+                    <div class="footer-widget mb--50 pb--1">
+                        <ul class="footer-menu">
+                            <li><a href="">درباره ما</a></li>
+                            <li><a href="">قوانین و مقررات</a></li>
+                            <li><a href="">تماس با ما</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-widget">
+                        Codingyar.com © | all rights reserved
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer End-->
 
-    <!-- Main JS -->
-    <script src={% static 'js/main.js' %}></script>
+
+{% include 'cart/cart_aside.html' %}
+<!-- ************************* JS Files ************************* -->
+
+<!-- jQuery JS -->
+<script src={% static 'js/vendor.js' %}></script>
+
+<!-- Main JS -->
+<script src={% static 'js/main.js' %}></script>
 </body>
 </html>

@@ -1,0 +1,42 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-01 02:35+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\_base.html:95
+msgid "profile"
+msgstr "حساب کاربری"
+
+#: .\_base.html:98
+msgid "cart"
+msgstr "سبد خرید"
+
+#: .\_base.html:107
+msgid "logout"
+msgstr "خروج"
+
+#: .\_base.html:112
+msgid "login"
+msgstr "ورود"
+
+#: .\_base.html:115
+msgid "signup"
+msgstr "ثبت نام"
+
+#: .\top_header.html:8
+msgid "product details of"
+msgstr "اطلاعات محصول"
