@@ -198,3 +198,6 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_UNIQUE_EMAIL = True
 
+# ! media
+MEDIA_URL = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, '/media/')
