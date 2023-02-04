@@ -4,10 +4,11 @@
 {% load i18n %}
 {% load static %}
 {% load comment_tags %}
+{% load  persian_translate_tags %}
 
 
 {% block title %}
-    سبد خرید
+    {% trans 'cart' %}
 {% endblock title %}
 
 
@@ -60,7 +61,7 @@
                                                     </td>
                                                     <td class="product-price">
                                                             <span class="product-price-wrapper">
-                                                                <span class="money">{{ item.product_obj.price }} {% trans '$' %}</span>
+                                                                <span class="money">{{ item.product_obj.price|persian_translate }} {% trans '$' %}</span>
                                                             </span>
                                                     </td>
                                                     <td class="product-quantity">
@@ -71,7 +72,7 @@
                                                             <div class="quantity">
                                                                 <input type="number" class="quantity-input"
                                                                        name="quantity"
-                                                                       id="qty-1" value="{{ item.quantity }}" min="1">
+                                                                       id="qty-1" value="{{ item.quantity|persian_translate }}" min="1">
                                                                 {{ item.update_quantity.inplace }}
                                                             </div>
                                                             <button class="small" type="submit">
@@ -81,7 +82,7 @@
                                                     </td>
                                                     <td class="product-total-price">
                                                             <span class="product-price-wrapper">
-                                                                <span class="money">{{ item.total_price }} {% trans '$' %}</span>
+                                                                <span class="money">{{ item.total_price|persian_translate }} {% trans '$' %}</span>
                                                             </span>
                                                     </td>
                                                     </tr>
@@ -94,21 +95,21 @@
                             </div>
                             <div class="row no-gutters border-top pt--20 mt--20">
                                 <div class="col-sm-6 text-sm-right">
-                                    <button type="submit" class="cart-form__btn">خالی کردن سبد خرید</button>
+                                    <button type="submit" class="cart-form__btn">{% trans 'empty the cart' %}</button>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="cart-collaterals">
                                 <div class="cart-totals">
-                                    <h5 class="font-size-14 font-bold mb--15">مجموع</h5>
+                                    <h5 class="font-size-14 font-bold mb--15">{% trans 'total' %}</h5>
                                     <div class="cart-calculator">
                                         <div class="cart-calculator__item">
                                             <div class="cart-calculator__item--head">
-                                                <span>مجموع</span>
+                                                <span>{% trans 'total' %}</span>
                                             </div>
                                             <div class="cart-calculator__item--value">
-                                                <span>{{ cart.get_total_price }} تومان</span>
+                                                <span>{{ cart.get_total_price |persian_translate}} {% trans '$' %}</span>
                                             </div>
                                         </div>
                                         {#                                        <div class="cart-calculator__item order-total">#}
@@ -125,8 +126,7 @@
                                 </div>
                                 <a href="checkout.html"
                                    class="btn btn-fullwidth btn-bg-red btn-color-white btn-hover-2">
-                                    ثبت سفارش
-                                </a>
+                                    {% trans 'checkout' %}    </a>
                             </div>
                         </div>
                     </div>

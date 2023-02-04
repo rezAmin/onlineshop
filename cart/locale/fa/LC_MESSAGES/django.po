@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-04 08:27+0330\n"
-"PO-Revision-Date: 2023-02-01 02:06+0330\n"
-"Last-Translator:   <rezzzaamin@gmail.com>\n"
+"POT-Creation-Date: 2023-02-04 10:08+0330\n"
+"PO-Revision-Date: 2023-02-04 10:10+0330\n"
+"Last-Translator:   <reza1831amin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -23,26 +23,38 @@ msgstr ""
 msgid "product successfully removed from cart"
 msgstr "محصول با موفقیت از سبد خرید حذف شد"
 
-#: templates/cart/cart_aside.html:8 templates/cart/cart_details.html:17
+#: templates/cart/cart_aside.html:8 templates/cart/cart_details.html:11
+#: templates/cart/cart_details.html:18
 msgid "cart"
 msgstr "سبد خرید"
 
-#: templates/cart/cart_aside.html:31 templates/cart/cart_aside.html:41
-#: templates/cart/cart_details.html:63 templates/cart/cart_details.html:84
+#: templates/cart/cart_aside.html:31 templates/cart/cart_aside.html:42
+#: templates/cart/cart_details.html:64 templates/cart/cart_details.html:85
+#: templates/cart/cart_details.html:112
 msgid "$"
 msgstr "تومان"
 
-#: templates/cart/cart_aside.html:40
+#: templates/cart/cart_aside.html:41
 msgid "total price"
 msgstr "مجموع"
 
-#: templates/cart/cart_aside.html:44
+#: templates/cart/cart_aside.html:45
 msgid "see cart"
 msgstr "مشاهده سبد خرید"
 
-#: templates/cart/cart_aside.html:45
+#: templates/cart/cart_aside.html:46 templates/cart/cart_details.html:129
 msgid "checkout"
 msgstr "پرداخت"
+
+#: templates/cart/cart_details.html:98
+#| msgid "see cart"
+msgid "empty the cart"
+msgstr "خالی کردن سبد خرید"
+
+#: templates/cart/cart_details.html:105 templates/cart/cart_details.html:109
+#| msgid "total price"
+msgid "total"
+msgstr "مجموع"
 
 #~ msgid "product successfully added to cart"
 #~ msgstr "محصول با موفقیت به سبد خرید اضافه شد"

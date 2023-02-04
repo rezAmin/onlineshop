@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-04 08:53+0330\n"
-"PO-Revision-Date: 2023-02-04 08:54+0330\n"
+"POT-Creation-Date: 2023-02-04 09:58+0330\n"
+"PO-Revision-Date: 2023-02-04 09:59+0330\n"
 "Last-Translator:   <reza1831amin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -55,23 +55,37 @@ msgstr "نظر خود را بنویسد"
 msgid "your score"
 msgstr "امتیاز شما"
 
-#: templates/products/product_detail.html:53
+#: templates/products/product_detail.html:40
+msgid "$"
+msgstr "تومان"
+
+#: templates/products/product_detail.html:57
 msgid "add to cart"
 msgstr "افزودن به سبد خرید"
 
-#: templates/products/product_detail.html:197
+#: templates/products/product_detail.html:89
+#| msgid "comment text"
+msgid "comments"
+msgstr "نظرات"
+
+#: templates/products/product_detail.html:161
+#| msgid "comment text"
+msgid "comment for"
+msgstr "نظر برای"
+
+#: templates/products/product_detail.html:201
 msgid "write your comment"
 msgstr "نظر خود را بنویسید"
 
-#: templates/products/product_detail.html:204
+#: templates/products/product_detail.html:208
 msgid "submit"
 msgstr "ارسال"
 
-#: templates/products/product_detail.html:210
+#: templates/products/product_detail.html:214
 msgid "to write your comment please"
 msgstr "برای نوشتن نظر خود لطفا"
 
-#: templates/products/product_detail.html:211
+#: templates/products/product_detail.html:215
 msgid "Login"
 msgstr "ورود کنید"
 
