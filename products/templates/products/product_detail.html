@@ -33,7 +33,7 @@
                             <div class="product-summary pl-lg--30 pl-md--0 text-right p-4">
                                 <h3 class="product-title mb--20">{{ product.title }}</h3>
                                 <p class="product-short-description mb--20">
-                                    {{ product.description }}</p>
+                                    {{ product.description|safe|truncatewords:10 }}</p>
                                 <div class="my-5 py-5 product-price-wrapper mb--25">
                                     <span class="money text-success">
                                         {{ product.price|persian_translate }}
@@ -78,7 +78,7 @@
                                 <div class="nav nav-tabs product-data-tab__head" id="product-tab" role="tablist">
                                     <a class="m-0 product-data-tab__link nav-link active" id="nav-description-tab"
                                        data-toggle="tab" href="#nav-description" role="tab" aria-selected="true">
-                                        <span>توضیحات محصول</span>
+                                        <span>{% trans 'product description' %}</span>
                                     </a>
                                     <a class="m-0 product-data-tab__link nav-link" id="nav-info-tab" data-toggle="tab"
                                        href="#nav-info" role="tab" aria-selected="true">
@@ -93,39 +93,7 @@
                                     <div class="tab-pane fade show active" id="nav-description" role="tabpanel"
                                          aria-labelledby="nav-description-tab">
                                         <div class="product-description text-justify">
-                                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده
-                                                از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و
-                                                سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای
-                                                متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه
-                                                درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با
-                                                نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان
-                                                خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید
-                                                داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان
-                                                رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات
-                                                پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.لورم ایپسوم
-                                                متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از
-                                                طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و
-                                                سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای
-                                                متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه
-                                                درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد،
-                                                تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص
-                                                طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان
-                                                امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به
-                                                پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی،
-                                                و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار
-                                                گیرد.لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
-                                                استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون
-                                                و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز،</p>
-                                            <p>
-                                                و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی
-                                                در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می
-                                                طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص
-                                                طراحان خلاقی، و فرهنگ پیشرو در زبان فارس
-                                                ی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در
-                                                ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل
-                                                حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی
-                                                اساسا مورد استفاده قرار گیرد.</p>
-
+                                           <p> {{ product.description|safe }}</p>
                                         </div>
                                     </div>
                                     <div class="tab-pane text-right" id="nav-info" role="tabpanel"
@@ -134,20 +102,20 @@
                                             <table class="table shop_attributes">
                                                 <tbody>
                                                 <tr>
-                                                    <th>وزن</th>
+                                                    <th>{% trans 'weight' %}</th>
                                                     <td>۴۳۰ گرم</td>
                                                 </tr>
                                                 <tr>
-                                                    <th>سایز</th>
+                                                    <th>{% trans 'size' %}</th>
                                                     <td>XL</td>
                                                 </tr>
                                                 <tr>
-                                                    <th>رنگ</th>
+                                                    <th>{% trans 'color' %}</th>
                                                     <td>
-                                                        <a href="shop-sidebar.html">مشکی</a>,
-                                                        <a href="shop-sidebar.html">سبز</a>,
-                                                        <a href="shop-sidebar.html">قرمز</a>,
-                                                        <a href="shop-sidebar.html">نارنجی</a>,
+                                                        <a href="shop-sidebar.html">{% trans 'black' %}</a>,
+                                                        <a href="shop-sidebar.html">{% trans 'green' %}</a>,
+                                                        <a href="shop-sidebar.html">{% trans 'red' %}</a>,
+                                                        <a href="shop-sidebar.html">{% trans 'orange' %}</a>,
                                                     </td>
                                                 </tr>
                                                 </tbody>
