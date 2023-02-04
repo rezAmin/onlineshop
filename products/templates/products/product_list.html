@@ -2,6 +2,7 @@
 
 {% load persian_translate_tags %}
 {% load i18n %}
+{% load humanize %}
 
 {% block title %}
 {% trans 'products list' %}
@@ -73,7 +74,7 @@
                                                                 <a href="{{ product.get_absolute_url }}">{{ product.title}}</a>
                                                             </h3>
                                                             <div class="product-price-wrapper mb--30">
-                                                                <span class="money text-success">{{product.price|persian_translate}}
+                                                                <span class="money text-success">{{product.price|intcomma:False|persian_translate}}
                                                                     {% trans '$'%}</span>
                                                                 <span class="money-separator">-</span>
                                                                 <span class="old-price text-danger">

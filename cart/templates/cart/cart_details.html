@@ -5,7 +5,7 @@
 {% load static %}
 {% load comment_tags %}
 {% load  persian_translate_tags %}
-
+{% load humanize %}
 
 {% block title %}
     {% trans 'cart' %}
@@ -61,7 +61,7 @@
                                                     </td>
                                                     <td class="product-price">
                                                             <span class="product-price-wrapper">
-                                                                <span class="money">{{ item.product_obj.price|persian_translate }} {% trans '$' %}</span>
+                                                                <span class="money">{{ item.product_obj.price|intcomma:False|persian_translate }} {% trans '$' %}</span>
                                                             </span>
                                                     </td>
                                                     <td class="product-quantity">
@@ -70,9 +70,9 @@
                                                               method="post">
                                                             {% csrf_token %}
                                                             <div class="quantity">
-                                                                <input type="number" class="quantity-input"
+                                                                <input type="number" class="quantity-input text-dark"
                                                                        name="quantity"
-                                                                       id="qty-1" value="{{ item.quantity|persian_translate }}" min="1">
+                                                                       id="qty-1" value="{{ item.quantity }}" min="1">
                                                                 {{ item.update_quantity.inplace }}
                                                             </div>
                                                             <button class="small" type="submit">
@@ -82,7 +82,7 @@
                                                     </td>
                                                     <td class="product-total-price">
                                                             <span class="product-price-wrapper">
-                                                                <span class="money">{{ item.total_price|persian_translate }} {% trans '$' %}</span>
+                                                                <span class="money">{{ item.total_price|intcomma:False|persian_translate }} {% trans '$' %}</span>
                                                             </span>
                                                     </td>
                                                     </tr>
@@ -109,7 +109,7 @@
                                                 <span>{% trans 'total' %}</span>
                                             </div>
                                             <div class="cart-calculator__item--value">
-                                                <span>{{ cart.get_total_price |persian_translate}} {% trans '$' %}</span>
+                                                <span>{{ cart.get_total_price |intcomma:False|persian_translate}} {% trans '$' %}</span>
                                             </div>
                                         </div>
                                         {#                                        <div class="cart-calculator__item order-total">#}
