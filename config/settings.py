@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
 
     # ! third party apps
+    'ckeditor',
     'jalali_date',
     'crispy_forms',
     'allauth',
@@ -204,3 +205,7 @@ ACCOUNT_UNIQUE_EMAIL = True
 # ! media
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, '/media/')
+
+# ! ckeditor
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
