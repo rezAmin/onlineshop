@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'rosetta',
 
     # ! locale apps
+    'jalali.apps.JalaliConfig'
     'accounts',
     'pages',
     'products.apps.ProductsConfig',
