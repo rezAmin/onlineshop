@@ -1,9 +1,11 @@
 from django.contrib import admin
+from jalali_date.admin import ModelAdminJalaliMixin, TabularInlineJalaliMixin
+
 
 from .models import Product, Comment
 
 
-class CommentInline(admin.TabularInline):
+class CommentInline(TabularInlineJalaliMixin, admin.TabularInline):
     model = Comment
     fields = ('author', 'body', 'stars','active',)
     ordering = ('author', 'active')
@@ -11,7 +13,7 @@ class CommentInline(admin.TabularInline):
 
 
 @admin.register(Product)
-class ProductAdmin(admin.ModelAdmin):
+class ProductAdmin(ModelAdminJalaliMixin, admin.ModelAdmin):
     list_display = ('title', 'price', 'datetime_modified', 'active')
     ordering = ('title', 'price', '-datetime_modified', 'active')
 

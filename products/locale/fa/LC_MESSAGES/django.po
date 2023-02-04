@@ -8,64 +8,73 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-31 20:42+0330\n"
-"PO-Revision-Date: 2023-01-31 20:45+0330\n"
-"Last-Translator:   <rezzzaamin@gmail.com>\n"
+"POT-Creation-Date: 2023-02-04 08:53+0330\n"
+"PO-Revision-Date: 2023-02-04 08:54+0330\n"
+"Last-Translator:   <reza1831amin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.9.8\n"
 
-#: .\models.py:27
+#: models.py:13
+msgid "product image"
+msgstr "عکس محصول"
+
+#: models.py:15
+msgid "date time of creation"
+msgstr "تاریخ افزودن"
+
+#: models.py:29
 msgid "Very Bad"
 msgstr "خیلی بد"
 
-#: .\models.py:28
+#: models.py:30
 msgid "Bad"
 msgstr "بد"
 
-#: .\models.py:29
+#: models.py:31
 msgid "Normal"
 msgstr "متوسط"
 
-#: .\models.py:30
+#: models.py:32
 msgid "Good"
 msgstr "خوب"
 
-#: .\models.py:31
+#: models.py:33
 msgid "Perfect"
 msgstr "عالی"
 
-#: .\models.py:36
+#: models.py:38
 msgid "comment text"
 msgstr "نظر خود را بنویسد"
 
-#: .\models.py:37
+#: models.py:39
 msgid "your score"
 msgstr "امتیاز شما"
 
-#: .\templates\products\product_detail.html:63
+#: templates/products/product_detail.html:53
 msgid "add to cart"
 msgstr "افزودن به سبد خرید"
 
-#: .\templates\products\product_detail.html:203
+#: templates/products/product_detail.html:197
 msgid "write your comment"
 msgstr "نظر خود را بنویسید"
 
-#: .\templates\products\product_detail.html:212
+#: templates/products/product_detail.html:204
 msgid "submit"
 msgstr "ارسال"
 
-#: .\templates\products\product_detail.html:218
+#: templates/products/product_detail.html:210
 msgid "to write your comment please"
 msgstr "برای نوشتن نظر خود لطفا"
 
-#: .\templates\products\product_detail.html:219
+#: templates/products/product_detail.html:211
 msgid "Login"
 msgstr "ورود کنید"
 
-#: .\views.py:38
+#: views.py:38
 msgid "comment added successfully"
 msgstr "نظر با موفقیت ارسال شد"
